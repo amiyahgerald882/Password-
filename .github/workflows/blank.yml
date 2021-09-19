@@ -1,0 +1,21 @@
+<form id="form-login" action="/login/" method="post">
+
+<input type="hidden" value="aaabbbcccjfheh48u8jdjd" name="FORM_TOKEN" />
+<input type="hidden" name="referer" value="">
+<label class="mts txtRight col1 required" for="LoginForm_email">E-Mail <span class="required">*</span></label>
+<input class="ui-inputText" name="LoginForm" id="LoginForm_email" type="email" />                             
+<label class="mts txtRight col1 required" for="LoginForm_password">Password <span class="required">*</span></label> <div class="collection col2">
+
+<input class="ui-inputPassword ui-inputPassword" name="LoginForm[password]"     id="LoginForm_password" type="password" />  
+<button class="ui-button ui-buttonCta" type="submit">
+
+ 
+
+PowerShell Script
+$clnt = new-object System.Net.WebClient
+$URL = "https://www.sample.com/login/"
+$token = "aaabbbcccjfheh48u8jdjd"
+$username = "sample_username"
+$password = "sample_password"
+$postParams = @{FORM_TOKEN=$token; LoginForm_email=$username; LoginForm_password=$password}
+Invoke-WebRequest -URi $URL -Method POST -body $postParams
